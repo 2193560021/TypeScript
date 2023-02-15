@@ -3,6 +3,9 @@ const path = require('path');
 
 // 引入html插件
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+//引入插件
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 
 //webpack中的所有配置信息都应该写在module.exports中
 module.exports = {
@@ -36,8 +39,12 @@ module.exports = {
 
     //配置webpack插件
     plugins:[
+
+        new CleanWebpackPlugin(),
+
         new HTMLWebpackPlugin({
-            title:"LYY-TypeScript"
+            // title:"LYY-TypeScript"
+            template:"./src/index.html"
         }),
     ]
 
